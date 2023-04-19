@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "ycarousel-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/yml-org/ycarousel-ios",
+      "state" : {
+        "revision" : "eae2efb56011d99cca2eac560f3e604e645fd833",
+        "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "ycoreui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/yml-org/YCoreUI.git",
+      "state" : {
+        "revision" : "38f2a285e43c044c2693a5a21e958b4b78c81492",
+        "version" : "1.7.0"
+      }
+    }
+  ],
+  "version" : 2
+}
