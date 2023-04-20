@@ -20,25 +20,27 @@
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="tNV-Zd-Xca" userLabel="Header">
                                 <rect key="frame" x="0.0" y="103" width="393" height="100"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="search_icon" translatesAutoresizingMaskIntoConstraints="NO" id="HPH-Xd-rlQ">
-                                        <rect key="frame" x="361" y="-8" width="24" height="42"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search_icon" translatesAutoresizingMaskIntoConstraints="NO" id="HPH-Xd-rlQ">
+                                        <rect key="frame" x="365" y="-8" width="20" height="20"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="32" id="BqP-RB-DYa"/>
+                                            <constraint firstAttribute="width" constant="20" id="BqP-RB-DYa"/>
+                                            <constraint firstAttribute="height" constant="20" id="IOv-UK-YWK"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="drawer_icon" translatesAutoresizingMaskIntoConstraints="NO" id="7eW-gw-58H">
-                                        <rect key="frame" x="8" y="-8" width="22" height="42"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drawer_icon" translatesAutoresizingMaskIntoConstraints="NO" id="7eW-gw-58H">
+                                        <rect key="frame" x="8" y="-8" width="20" height="20"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="29" id="I2C-sr-NFl"/>
+                                            <constraint firstAttribute="height" constant="20" id="Dgu-8B-gPu"/>
+                                            <constraint firstAttribute="width" constant="20" id="I2C-sr-NFl"/>
                                         </constraints>
                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movies" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqF-Yj-pSb">
-                                        <rect key="frame" x="8" y="42" width="167" height="45"/>
+                                        <rect key="frame" x="8" y="12" width="167" height="75"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="167" id="dS4-kd-ZCh"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="34"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -49,7 +51,7 @@
                                     <constraint firstItem="7eW-gw-58H" firstAttribute="top" secondItem="tNV-Zd-Xca" secondAttribute="top" constant="-8" id="7Yx-R1-frj"/>
                                     <constraint firstItem="7eW-gw-58H" firstAttribute="leading" secondItem="oqF-Yj-pSb" secondAttribute="leading" id="Bi9-a2-Xhg"/>
                                     <constraint firstAttribute="bottom" secondItem="HPH-Xd-rlQ" secondAttribute="bottom" constant="66" id="KBR-na-2ou"/>
-                                    <constraint firstItem="oqF-Yj-pSb" firstAttribute="top" secondItem="7eW-gw-58H" secondAttribute="bottom" constant="8" symbolic="YES" id="OT9-r3-II4"/>
+                                    <constraint firstItem="oqF-Yj-pSb" firstAttribute="top" secondItem="7eW-gw-58H" secondAttribute="bottom" id="OT9-r3-II4"/>
                                     <constraint firstAttribute="bottom" secondItem="oqF-Yj-pSb" secondAttribute="bottom" constant="13" id="QKd-gN-IAg"/>
                                     <constraint firstItem="oqF-Yj-pSb" firstAttribute="leading" secondItem="tNV-Zd-Xca" secondAttribute="leadingMargin" id="RVN-NR-gIu"/>
                                     <constraint firstItem="HPH-Xd-rlQ" firstAttribute="trailing" secondItem="tNV-Zd-Xca" secondAttribute="trailingMargin" id="ing-Vx-g0S"/>
@@ -67,7 +69,7 @@
                                             <constraint firstAttribute="width" constant="167" id="1lb-Hx-yc2"/>
                                             <constraint firstAttribute="height" constant="30" id="vNp-sd-Ryn"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
