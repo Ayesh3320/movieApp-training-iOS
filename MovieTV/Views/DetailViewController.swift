@@ -18,6 +18,8 @@ class DetailViewController: UIViewController {
     @IBOutlet var genres: UILabel!
     @IBOutlet var overview: UILabel!
     @IBOutlet var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var backButton1: UIImageView!
+    @IBOutlet weak var backButton: UIButton!
     
     let activityView = UIActivityIndicatorView(style: .large)
     
@@ -34,9 +36,9 @@ class DetailViewController: UIViewController {
         
         
         loadImage(from: data!.poster_path)
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backTapped(tapGestureRecognizer:)))
+//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backTapped(tapGestureRecognizer:)))
         imageView.isUserInteractionEnabled = true
-        imageView.addGestureRecognizer(tapGestureRecognizer)
+//        imageView.addGestureRecognizer(tapGestureRecognizer)
         
         bottomView.clipsToBounds = true
         bottomView.layer.cornerRadius = 50
@@ -82,9 +84,9 @@ class DetailViewController: UIViewController {
     
     
     
-    @objc func backTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    @IBAction func backTapped()
     {
-        let tappedImage = tapGestureRecognizer.view as! UIImageView
+//        let tappedImage = tapGestureRecognizer.view as! UIImageView
         navigationController?.popViewController(animated: true)
     }
     
