@@ -22,7 +22,6 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     
     let activityView = UIActivityIndicatorView(style: .large)
-    
     var movieDetail = DetailViewModel()
     
     override func viewDidLoad() {
@@ -33,43 +32,29 @@ class DetailViewController: UIViewController {
         genres.text = ""
         overview.text = ""
         navigationItem.hidesBackButton = true
-        
-        
         loadImage(from: data!.poster_path)
-//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(backTapped(tapGestureRecognizer:)))
         imageView.isUserInteractionEnabled = true
-//        imageView.addGestureRecognizer(tapGestureRecognizer)
-        
         bottomView.clipsToBounds = true
         bottomView.layer.cornerRadius = 50
         bottomView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         
-        let topMargin: CGFloat = 50
-        
-        
         showActivityIndicatory()
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            
             self.movieDetail.fetchMovieDetail(id: String(self.data!.id)){ success, data in
                 if(success){
-                    
                     DispatchQueue.main.async{
-                        print(self.movieDetail.movieDetail.id)
-                        self.rating.text = (String(format: "%.1f", self.movieDetail.movieDetail.vote_average))+"/10"
+                        self.rating.text = (String(format: "%.1f", self.movieDetail.movieDetail.vote_average!))+"/10"
                         self.movie_name.text = self.movieDetail.movieDetail.title
-                        let names = self.movieDetail.movieDetail.genres.map { $0.name }
+                        let names = self.movieDetail.genres.map { $0.name }
                         self.genres.text = names.joined(separator: "/")
                         
                         self.overview.text = self.movieDetail.movieDetail.overview
                     }
-                    
                 }
-                
                 self.hideActivityIndicator()
             }
         }
-        
-        // Do any additional setup after loading the view.
     }
     
     func loadImage(from urlString: String) {
@@ -82,27 +67,15 @@ class DetailViewController: UIViewController {
         }.resume()
     }
     
-    
-    
     @IBAction func backTapped()
     {
-//        let tappedImage = tapGestureRecognizer.view as! UIImageView
         navigationController?.popViewController(animated: true)
     }
-    
-    
-    
     
     
     // Mark  -  Activity Indicator
     
     func showActivityIndicatory() {
-        
-//        activityView.center = self.view.center
-//        //        activityView.topAnchor.constraint(equalToSystemSpacingBelow: view.topAnchor, multiplier: 0.7)
-//        activityView.color = .black
-//        self.view.addSubview(activityView)
-//
         indicator.startAnimating()
     }
     
@@ -110,7 +83,6 @@ class DetailViewController: UIViewController {
         if (indicator != nil){
             DispatchQueue.main.async {
                 self.indicator.stopAnimating()
-//                self.indicator.hidesWhenStopped = true
             }
         }
     }

@@ -13,7 +13,4 @@ struct MovieModel: Codable{
     var title: String
     var vote_average: Float32
     var poster_path: String
-    
-    
-    
 }

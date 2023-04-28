@@ -10,7 +10,6 @@ import Foundation
 class HomeTableCellViewModel{
     
     public var moviesList: [MovieModel] = []
-    
     private let networkService: NetworkService = DefaultNetworkService()
     
     func fetchMovies(_ completion: @escaping (_ success: Bool) -> Void) {
@@ -19,13 +18,10 @@ class HomeTableCellViewModel{
             
             if(success){
                 do {
-                    
                     let jsonResponse = try JSONDecoder().decode(movieListResponse.self, from:result!)
                     print(jsonResponse)
                     for movie in jsonResponse.results{
                         self.moviesList.append(MovieModel(id: movie.id, title: movie.title, vote_average: movie.vote_average, poster_path: "https://image.tmdb.org/t/p/w500/"+movie.poster_path))
-                        print("https://image.tmdb.org/t/p/w500/"+movie.poster_path+"\n")
-                        
                     }
                     completion(true)
                     

@@ -34,15 +34,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                         self.carousel.reloadData()
                         self.loaded = true
                     }
-                }else{
-                    
                 }
-                
             }
         }
-        
-        
-        
         
     }
     
@@ -64,11 +58,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             }
         }
     }
-    
-    // Mark  -  ImageView
-    
-    
-    
+
     // Mark  -  Delegates
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -84,11 +74,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let detailViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-            // Set any data you want to pass to the destination view controller here
-            // For example:
+        let detailViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         detailViewController.data = moviesModel.moviesList[indexPath.row]
-            navigationController?.pushViewController(detailViewController, animated: true)
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
     
     
@@ -99,7 +87,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                 as? HomeCollectionViewCell else {
             fatalError()
         }
-        //        var k: MovieModel = MovieModel(name: "ABc", rating: "5", image: "4")
         cell.configure(data: moviesModel.moviesList[indexPath.row])
         return cell
     }

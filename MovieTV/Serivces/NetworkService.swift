@@ -49,26 +49,6 @@ final class DefaultNetworkService: NetworkService {
             }
             
             completion(true,responseData)
-            
-//            do {
-//
-//                let jsonResponse = try JSONDecoder().decode(tmpStruct.self, from:responseData)
-//                print(jsonResponse)
-//                for movie in jsonResponse.results{
-//                    self.moviesList.append(MovieModel(id: movie.id, title: movie.title, vote_average: movie.vote_average, poster_path: "https://image.tmdb.org/t/p/w500/"+movie.poster_path))
-//                    print("https://image.tmdb.org/t/p/w500/"+movie.poster_path+"\n")
-//
-//                }
-//                completion(true)
-//                //                DispatchQueue.main.async {
-//                //                    self.tableview.reloadData()
-//                //                }
-//
-//            } catch let error {
-//                print(error.localizedDescription)
-//
-//            }
-            
         }
         
         task.resume()

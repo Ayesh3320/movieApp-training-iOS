@@ -9,24 +9,7 @@ import Foundation
 class DetailViewModel{
     
     public var movieDetail = MovieDetailModel()
-    
-//    public struct genre: Codable {
-//        var genre_name: String
-//        var id: Int32
-//    }
-    
-    var genres: [MovieDetailModel.genre] = []
-    
-    public struct movie: Codable {
-        var id: Int32
-        var title: String
-        var overview: String
-        var vote_average: Float32
-        var poster_path: String
-        var genres: [MovieDetailModel.genre]
-        var runtime: Int32
-    }
-    
+    var genres: [genre] = []
     private let networkService: NetworkService = DefaultNetworkService()
     
     func fetchMovieDetail(id:String, _ completion: @escaping (_ success: Bool, _ data:MovieDetailModel?) -> Void) {
@@ -35,15 +18,14 @@ class DetailViewModel{
             success, result in
             if(success){
                 do {
-                    
-                    let jsonResponse = try JSONDecoder().decode(movie.self, from:result!)
+                    let jsonResponse = try JSONDecoder().decode(MovieDetailModel.self, from:result!)
                     print(jsonResponse)
-                    for genreResp in jsonResponse.genres{
-                        var k = MovieDetailModel.genre(name: genreResp.name, id: genreResp.id)
+                    for genreResp in jsonResponse.genres ?? [] {
+                        let k = genre(name: genreResp.name, id: genreResp.id)
                         self.genres.append(k)
                     }
                     
-                    self.movieDetail.configure(id: jsonResponse.id, title: jsonResponse.title, overview: jsonResponse.overview, vote_average: jsonResponse.vote_average, poster_path: "https://image.tmdb.org/t/p/w500/"+jsonResponse.poster_path, genres: self.genres, runtime: jsonResponse.runtime)
+                    self.movieDetail = jsonResponse
                     completion(true, self.movieDetail)
   
                 } catch let error {
