@@ -55,7 +55,7 @@ class DetailViewController: UIViewController {
                     
                     DispatchQueue.main.async{
                         print(self.movieDetail.movieDetail.id)
-                        self.rating.text = self.movieDetail.movieDetail.vote_average.description+"/10"
+                        self.rating.text = (String(format: "%.1f", self.movieDetail.movieDetail.vote_average))+"/10"
                         self.movie_name.text = self.movieDetail.movieDetail.title
                         let names = self.movieDetail.movieDetail.genres.map { $0.name }
                         self.genres.text = names.joined(separator: "/")

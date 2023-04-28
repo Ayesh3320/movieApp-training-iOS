@@ -42,6 +42,8 @@ class HomeCollectionViewCell: UICollectionViewCell {
         stars.textColor = .black
         stars.textAlignment = .left
         stars.translatesAutoresizingMaskIntoConstraints = false
+        stars.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
+        stars.textColor = UIColor.systemOrange
         return stars
     }()
     

@@ -161,8 +161,8 @@
                                         <color key="textColor" red="0.98431372549019602" green="0.45098039215686275" blue="0.0078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UbC-28-uIF" userLabel="Title">
-                                        <rect key="frame" x="25" y="29" width="87" height="34"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UbC-28-uIF" userLabel="Title">
+                                        <rect key="frame" x="25" y="45.666666666666629" width="358" height="27.333333333333329"/>
                                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -186,6 +186,7 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="UbC-28-uIF" secondAttribute="trailing" constant="10" id="1Jn-gp-IwT"/>
                                     <constraint firstItem="RY6-k6-Y3N" firstAttribute="leading" secondItem="rSw-RU-Yhp" secondAttribute="leading" constant="25" id="57U-Si-mqz" userLabel="Rating.leading = leading + 25"/>
                                     <constraint firstItem="RY6-k6-Y3N" firstAttribute="top" secondItem="rSw-RU-Yhp" secondAttribute="top" constant="20" id="Bgl-dY-pdH"/>
                                     <constraint firstItem="xvX-Q8-91F" firstAttribute="top" secondItem="QAK-xf-LaE" secondAttribute="bottom" constant="10" id="Bva-aC-mqo"/>
@@ -203,7 +204,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZA-m7-Gac">
                                 <rect key="frame" x="10" y="49" width="40" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system">
+                                    <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="backTapped" destination="GDw-8M-i69" eventType="touchDown" id="Wdc-tR-CVL"/>
                                 </connections>
